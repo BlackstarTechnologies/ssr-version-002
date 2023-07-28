@@ -12,8 +12,8 @@ export default function HomePage() {
           alt="mountains"
         />
 
-        <div className="h-screen mx-auto flex justify-center items-center ">
-          {process.env.HELLO_WORLD}
+        <div className="h-screen mx-auto flex-initial w-screen flex justify-center items-center ">
+          <div>{process.env.HELLO_WORLD}</div>
         </div>
       </div>
     </main>
