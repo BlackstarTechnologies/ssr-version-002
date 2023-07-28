@@ -8,11 +8,11 @@ export default function HomePage() {
       <div className="flex h-screen w-screen">
         <img
           src="/assets/images/rolling_mountains_000.jpg"
-          className="h-screen"
+          className="h-screen flex-1"
           alt="mountains"
         />
 
-        <div className="h-screen mx-auto flex-initial w-screen flex justify-center items-center ">
+        <div className="h-screen mx-auto flex-initial w-screen md:min-w-[300px] flex justify-center items-center ">
           <div>{process.env.HELLO_WORLD}</div>
         </div>
       </div>
