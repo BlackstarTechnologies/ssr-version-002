@@ -1,10 +1,6 @@
-import { connectToDB } from "@engine/DB/connect_to_db";
 import Nav from "@parts/components/nav";
-import Image from "next/image";
 
 import React from "react";
-
-connectToDB();
 
 export default function HomePage() {
   return (
@@ -20,11 +16,12 @@ export default function HomePage() {
   );
 }
 
-function Section({ children, className }) {
+function Section({ id, children, className }) {
   return (
     <div
+      id={id}
       className={
-        "h-screen w-screen flex items-center justify-center flex-col " +
+        "h-[calc(100vh-2rem)] w-screen flex items-center justify-center flex-col " +
         className
       }
     >
@@ -34,20 +31,24 @@ function Section({ children, className }) {
 }
 
 function HomeSection(props) {
-  return <Section className="bg-[aliceblue]">Home</Section>;
+  return (
+    <Section id="Home" className="bg-[aliceblue]">
+      Home
+    </Section>
+  );
 }
 function AboutSection(props) {
-  return <Section>About</Section>;
+  return <Section id="About">About</Section>;
 }
 function SubscriptionSection(props) {
-  return <Section>Subscriptions</Section>;
+  return <Section id="Subsciption">Subscriptions</Section>;
 }
 function ContactSection(props) {
-  return <Section>Contact Us</Section>;
+  return <Section id="Contact">Contact Us</Section>;
 }
 function ReviewsSection(props) {
-  return <Section>Reviews</Section>;
+  return <Section id="Reviews">Reviews</Section>;
 }
 function FooterSection(props) {
-  return <div>Footer</div>;
+  return <div id="Footer">Footer</div>;
 }

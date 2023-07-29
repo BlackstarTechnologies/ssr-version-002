@@ -1,7 +1,10 @@
 require("dotenv/config");
+import { wait } from "@engine/utils";
 import mongoose from "mongoose";
 
-import { wait } from "@engine/utils";
+// const mongoose = require("mongoose");
+
+// const { wait } = require("../utils");
 
 let isConnected = false;
 mongoose.set("strictQuery");
