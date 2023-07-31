@@ -32,9 +32,12 @@ function Section({ id, children, className }) {
 
 function HomeSection(props) {
   return (
-    <Section id="Home" className="bg-[aliceblue] home_page_home_section">
-      <div className="relative h-full w-full bg-[#0000007e]">
-       {/* <img src="" alt=""  />  */}
+    <Section
+      id="Home"
+      className="bg-[aliceblue] relative home_page_home_section"
+    >
+      <div className="h-full w-full bg-[#0000007e]">
+        {/* <img src="" alt=""  />  */}
       </div>
     </Section>
   );

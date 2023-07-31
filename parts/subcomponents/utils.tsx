@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
+import React, { useEffect, useState } from "react";
 
 // export const useClientSide = (func: T) => {
 //   const [value, setValue] = useState(null);
@@ -12,14 +11,13 @@ import { useEffect, useState } from "react";
 //   return value;
 // };
 
-
-export function useClientSide <ClientSideData> (func: ()=>ClientSideData):ClientSideData {
+export function useClientSide<ClientSideData>(
+  func: () => ClientSideData
+): ClientSideData {
   const [value, setValue] = useState<ClientSideData>(null);
 
   useEffect(() => {
     setValue(func());
   }, [func]);
   return value;
-};
-
-
+}
