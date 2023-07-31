@@ -15,7 +15,7 @@ function Link({ text, href }) {
 function Nav(props) {
   const sqr = 32;
   return (
-    <div className="sticky w-full flex-initial  flex  bg-[#79ecf0] ">
+    <div className="sticky top-0 w-full flex-initial  flex  bg-[#79ecf0] ">
       <div id="NavLeft" className="flex items-center justify-center text-[#ffffb0] text-[2rem]">
         <Image
           src="/assets/images/sunflower_logo.png"
