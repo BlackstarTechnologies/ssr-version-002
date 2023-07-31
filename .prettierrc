@@ -2,6 +2,5 @@
   "tabWidth": 2,
   "useTabs": false,
   "proseWrap": "always",
-"arrowParens": "always",
-  
+"arrowParens": "always"
 }
