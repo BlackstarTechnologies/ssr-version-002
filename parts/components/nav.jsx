@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import { NavDropDown } from "@subcomponents/nav_utils.tsx";
+import { NavDropDown } from "@subcomponents/nav_utils";
 
 function Link({ text, href }) {
   return (
