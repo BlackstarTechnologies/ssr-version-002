@@ -2,7 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  staticPageGenerationTimeout: 3,
+
+  pageExtensions: ["mdx", "md","mjs", "jsx", "js", "tsx", "ts"],
   experimental: {
     appDir: true,
     serverComponentsExternalPackages: ["mongoose"],
