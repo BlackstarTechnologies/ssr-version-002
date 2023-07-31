@@ -1,24 +1,33 @@
-require("dotenv/config");
 import { wait } from "@engine/utils";
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 // const mongoose = require("mongoose");
 
 // const { wait } = require("../utils");
 
+let strictQuery = false;
 let isConnected = false;
-mongoose.set("strictQuery");
 let attempts = 0;
 
 const dbName = "SunflowerApp";
 // type Error = any;
-console.log(process.env.MONGODB_USER, "\n", process.env.MONGODB_PASSWORD);
+console.log(
+  "User:\t  ",
+  process.env.MONGODB_USER,
+  "\nPassword: ",
+  process.env.MONGODB_PASSWORD
+);
 
 export const connectToDB = async () => {
   if (isConnected) {
     return isConnected;
   }
+
   try {
+    if (!strictQuery) {
+      mongoose.set("strictQuery");
+      strictQuery = true;
+    }
     const connectionString = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@olivineschool000.jerpqjx.mongodb.net`;
     console.log(`mongoDB connection string: ${connectionString}`);
 
@@ -35,7 +44,7 @@ export const connectToDB = async () => {
     console.log("MongoDB connected");
     return isConnected;
   } catch (error) {
-    if (attempts++ > 3) process.exit(1);
+    if (attempts++ > 3) return false;
     console.log(error.message);
     return await wait(attempts).then(connectToDB);
   }

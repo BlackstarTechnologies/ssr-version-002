@@ -1,5 +1,5 @@
-import HomePage from "@parts/pages/Home";
-import { connectToDB } from "@engine/DB/connect_to_db";
+import HomePage from "@pages/Home";
+import { connectToDB } from "@DB/connect_to_db";
 
 connectToDB();
 
