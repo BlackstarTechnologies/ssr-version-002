@@ -1,8 +1,6 @@
 import React from "react";
 import Image from "next/image";
 
-import { NavDropDown } from "@subcomponents/nav_utils";
-
 function Link({ text, href }) {
   return (
     <a
@@ -47,3 +45,7 @@ function Nav(props) {
 }
 
 export default Nav;
+
+function DropDown(props) {
+  return <div>DropDown</div>;
+}
